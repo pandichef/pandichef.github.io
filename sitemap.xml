@@ -2,13 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://pandichef.github.io/categories/</loc>
+    <loc>https://pandichef.github.io/</loc>
+    <lastmod>2020-08-31T23:17:42-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://pandichef.github.io/</loc>
+    <loc>https://pandichef.github.io/post/my-first-post/</loc>
+    <lastmod>2020-08-31T23:17:42-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://pandichef.github.io/post/</loc>
+    <lastmod>2020-08-31T23:17:42-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://pandichef.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

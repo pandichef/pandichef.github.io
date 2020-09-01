@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Even - A super concise theme for Hugo</title>
+    <link>https://pandichef.github.io/post/</link>
+    <description>Recent content in Posts on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 31 Aug 2020 23:17:42 -0400</lastBuildDate>
+    
+	<atom:link href="https://pandichef.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My First Post</title>
+      <link>https://pandichef.github.io/post/my-first-post/</link>
+      <pubDate>Mon, 31 Aug 2020 23:17:42 -0400</pubDate>
+      
+      <guid>https://pandichef.github.io/post/my-first-post/</guid>
+      <description>1  print(&amp;#39;hello world&amp;#39;)   There are two common models of conceptualizing the risk associated with a stock:
+Stock price return volatility (either empirical or implied) Graham’s notion of &amp;ldquo;margin of safety&amp;rdquo; i.e., the difference between a stock’s price and its intrinsic value The latter can be characterized as an informal assessment of how much downside risk is associated with a stock. In other words, it&amp;rsquo;s a consideration of the potential losses if an investor&amp;rsquo;s thesis is incorrect and/or if the worst case scenario is realized.</description>
+    </item>
+    
+  </channel>
+</rss>

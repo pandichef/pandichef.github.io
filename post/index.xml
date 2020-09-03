@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Fintech Musings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 31 Aug 2020 23:17:42 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2020 12:05:12 -0400</lastBuildDate>
     
 	<atom:link href="https://pandichef.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A Common Sense Approach to Portfolio Theory</title>
+      <link>https://pandichef.github.io/post/naive-portfolio-theory/</link>
+      <pubDate>Thu, 03 Sep 2020 12:05:12 -0400</pubDate>
+      
+      <guid>https://pandichef.github.io/post/naive-portfolio-theory/</guid>
+      <description>Introduction Traditional portfolio theory employs an optimization strategy that involves maximizing a expected portfolio&amp;rsquo;s Sharpe Ratio given asset Sharpe Ratios and a correlation matrix. Levy and Duchin (2009), however, demonstrate that optimal weights don&amp;rsquo;t significantly outperform a naive 1/N optimization strategy.
+The problem with weights is that they are heavily dependent on Sharpe Ratio estimatation. If a stock has a 0.99 correlation versus the market and has the highest Sharpe Ratio amongst all assets under consideration, then portfolio optimization would suggest that 100% of the portfolio should be in that single asset.</description>
+    </item>
     
     <item>
       <title>Margin of Safety vs Volatility</title>

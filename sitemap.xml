@@ -2,21 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://pandichef.github.io/</loc>
-    <lastmod>2020-08-31T23:17:42-04:00</lastmod>
+    <loc>https://pandichef.github.io/post/naive-portfolio-theory/</loc>
+    <lastmod>2020-09-03T12:05:12-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://pandichef.github.io/post/margin-of-safety/</loc>
-    <lastmod>2020-08-31T23:17:42-04:00</lastmod>
+    <loc>https://pandichef.github.io/</loc>
+    <lastmod>2020-09-03T12:05:12-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://pandichef.github.io/post/</loc>
+    <lastmod>2020-09-03T12:05:12-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://pandichef.github.io/post/margin-of-safety/</loc>
     <lastmod>2020-08-31T23:17:42-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

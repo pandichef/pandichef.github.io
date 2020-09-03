@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>A Common Sense Approach to Portfolio Theory - Fintech Musings</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="David Rashty" /><meta name="description" content="Introduction Traditional portfolio theory employs an optimization strategy that involves maximizing a expected portfolio&amp;rsquo;s Sharpe Ratio given asset Sharpe Ratios and a correlation matrix. Levy and Duchin (2009), however, demonstrate that optimal weights don&amp;rsquo;t significantly outperform a naive 1/N optimization strategy.
+The problem with weights is that they are heavily dependent on Sharpe Ratio estimatation. If a stock has a 0.99 correlation versus the market and has the highest Sharpe Ratio amongst all assets under consideration, then portfolio optimization would suggest that 100% of the portfolio should be in that single asset." /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.69.2 with theme even" />
+
+
+<link rel="canonical" href="https://pandichef.github.io/post/naive-portfolio-theory/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.651e6917abb0239242daa570c2bec9867267bbcd83646da5a850afe573347b44.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="A Common Sense Approach to Portfolio Theory" />
+<meta property="og:description" content="Introduction Traditional portfolio theory employs an optimization strategy that involves maximizing a expected portfolio&rsquo;s Sharpe Ratio given asset Sharpe Ratios and a correlation matrix. Levy and Duchin (2009), however, demonstrate that optimal weights don&rsquo;t significantly outperform a naive 1/N optimization strategy.
+The problem with weights is that they are heavily dependent on Sharpe Ratio estimatation. If a stock has a 0.99 correlation versus the market and has the highest Sharpe Ratio amongst all assets under consideration, then portfolio optimization would suggest that 100% of the portfolio should be in that single asset." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pandichef.github.io/post/naive-portfolio-theory/" />
+<meta property="article:published_time" content="2020-09-03T12:05:12-04:00" />
+<meta property="article:modified_time" content="2020-09-03T12:05:12-04:00" />
+<meta itemprop="name" content="A Common Sense Approach to Portfolio Theory">
+<meta itemprop="description" content="Introduction Traditional portfolio theory employs an optimization strategy that involves maximizing a expected portfolio&rsquo;s Sharpe Ratio given asset Sharpe Ratios and a correlation matrix. Levy and Duchin (2009), however, demonstrate that optimal weights don&rsquo;t significantly outperform a naive 1/N optimization strategy.
+The problem with weights is that they are heavily dependent on Sharpe Ratio estimatation. If a stock has a 0.99 correlation versus the market and has the highest Sharpe Ratio amongst all assets under consideration, then portfolio optimization would suggest that 100% of the portfolio should be in that single asset.">
+<meta itemprop="datePublished" content="2020-09-03T12:05:12-04:00" />
+<meta itemprop="dateModified" content="2020-09-03T12:05:12-04:00" />
+<meta itemprop="wordCount" content="268">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A Common Sense Approach to Portfolio Theory"/>
+<meta name="twitter:description" content="Introduction Traditional portfolio theory employs an optimization strategy that involves maximizing a expected portfolio&rsquo;s Sharpe Ratio given asset Sharpe Ratios and a correlation matrix. Levy and Duchin (2009), however, demonstrate that optimal weights don&rsquo;t significantly outperform a naive 1/N optimization strategy.
+The problem with weights is that they are heavily dependent on Sharpe Ratio estimatation. If a stock has a 0.99 correlation versus the market and has the highest Sharpe Ratio amongst all assets under consideration, then portfolio optimization would suggest that 100% of the portfolio should be in that single asset."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">David Rashty</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">David Rashty</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">A Common Sense Approach to Portfolio Theory</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-09-03 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="introduction">Introduction</h2>
+<p>Traditional portfolio theory employs an optimization strategy that
+involves maximizing a expected portfolio&rsquo;s Sharpe Ratio given asset Sharpe Ratios
+and a correlation matrix.  Levy and Duchin (2009), however, demonstrate that optimal
+weights don&rsquo;t significantly outperform a naive 1/N optimization strategy.</p>
+<p>The problem with weights is that they are heavily dependent on Sharpe Ratio estimatation.
+If a stock has a 0.99 correlation versus the market and has the highest Sharpe
+Ratio amongst all assets under consideration, then portfolio optimization would suggest
+that 100% of the portfolio should be in that single asset.  If, however, another 0.99
+correlation asset in actuality had the highest Sharpe Ratio, then 0% of the portfolio
+should be in that asset.</p>
+<p>In other words, there is an implicit assumption in portfolio theory that Sharpe Ratio
+estimates have 0 standard error, which of course is ridiculous.  A correct portfolio
+theory must account for Sharpe Ratio estimation error.  And to the best of my knowledge,
+no such theory currently exists.</p>
+<p>An alternative approach is simple to consider whether an asset belongs in a portfolio
+in general.  It turns out that the decision criteria is based on the following formula:
+$$
+MSR_a = SR_a - \rho SR_m
+$$</p>
+<p>where MSR means Marginal Sharpe Ratio.  If an asset&rsquo;s <em>Marginal</em> Sharpe Ratio is greater
+than zero, then an asset has some place in our portfolio.  Moreover, assuming Sharpe
+Ratios estimates are roughly the same for all assets, a higher MSR implies a greater
+confidence that the asset belongs in our portfolio.</p>
+<!--
+An alternative approach is to use a weights as a signal for investment quality 
+i.e., select securities based on portfolio weights but build a portfolio using 
+the naive 1/N strategy.
+
+In this context, it is adequate to consider a choice between the single asset 
+under consideration and the market portfolio.  In other words, we want to find 
+\\(w\\) that maximizes the market portfolio.
+
+$$
+SR_p = \frac{w\mu_a+(1-w)\mu_m}{\sqrt{w^2\sigma_a^2+(1-w)^2\sigma_m^2+2\rho w(1-w)\sigma_a\sigma_m}}
+$$
+$$
+w^2\sigma_a^2 + (1-w)^2\sigma_m^2 + 2\rho w\sigma_a\sigma_m - 2\rho w^2\sigma_a\sigma_m
+$$
+$$
+2w\sigma_a^2 - 2(1-w)\sigma_m^2 + 2\rho\sigma_a\sigma_m - 4\rho w\sigma_a\sigma_m
+$$
+
+We can maximize this quantity by taking the first derivative and setting it to 0.
+
+$$
+SR_p^{\prime} = \frac{\sqrt{w^2\sigma_a^2+(1-w)^2\sigma_m^2+2\rho w(1-w)\sigma_a\sigma_m}(\mu_a-\mu_m)-\frac{(w\mu_a+(1-w)\mu_m)(2w\sigma_a^2 - 2(1-w)\sigma_m^2 + 2\rho\sigma_a\sigma_m - 4\rho w\sigma_a\sigma_m)}{2\sqrt{w^2\sigma_a^2+(1-w)^2\sigma_m^2+2\rho w(1-w)\sigma_a\sigma_m}}}{w^2\sigma_a^2+(1-w)^2\sigma_m^2+2\rho w(1-w)\sigma_a\sigma_m}
+$$
+
+Now if we set this quantity to zero we get
+$$
+\sqrt{w^2\sigma_a^2+(1-w)^2\sigma_m^2+2\rho w(1-w)\sigma_a\sigma_m}(\mu_a-\mu_m) = 
+$$
+$$
+\frac{(w\mu_a+(1-w)\mu_m)(2w\sigma_a^2 - 2(1-w)\sigma_m^2 + 2\rho\sigma_a\sigma_m - 4\rho w\sigma_a\sigma_m)}{2\sqrt{w^2\sigma_a^2+(1-w)^2\sigma_m^2+2\rho w(1-w)\sigma_a\sigma_m}}
+$$
+$$
+2(w^2\sigma_a^2+(1-w)^2\sigma_m^2+2\rho w(1-w)\sigma_a\sigma_m)(\mu_a-\mu_m) = 
+$$
+$$
+(w\mu_a+(1-w)\mu_m)(2w\sigma_a^2 - 2(1-w)\sigma_m^2 + 2\rho\sigma_a\sigma_m - 4\rho w\sigma_a\sigma_m)
+$$
+-->
+<h2 id="references">References</h2>
+<p><a href="https://jpm.pm-research.com/content/35/2/71.short">Levy and Duchin (2009) “Markowitz Versus the Talmudic Portfolio Diversification Strategies”
+Journal of Portfolio Management 35, 71-74.</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">David Rashty</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-09-03
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/margin-of-safety/">
+            <span class="next-text nav-default">Margin of Safety vs Volatility</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:david.rashty@pandibay.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/10134077/pandichef" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/drashty" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/david-rashty-5381b213/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/pandichef" class="iconfont icon-github" title="github"></a>
+  <a href="https://pandichef.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">David Rashty</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

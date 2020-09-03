@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Even - A super concise theme for Hugo</title>
+    <title>Fintech Musings</title>
     <link>https://pandichef.github.io/</link>
-    <description>Recent content on Even - A super concise theme for Hugo</description>
+    <description>Recent content on Fintech Musings</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Mon, 31 Aug 2020 23:17:42 -0400</lastBuildDate>
@@ -17,8 +17,8 @@
       <pubDate>Mon, 31 Aug 2020 23:17:42 -0400</pubDate>
       
       <guid>https://pandichef.github.io/post/margin-of-safety/</guid>
-      <description>There are two common models of conceptualizing the risk associated with a stock:
- The Margin of Safety Principal popularized by Benjamin Graham Asset returns volatility  The former can be characterized as a subjective assessment of how much downside risk is associated with a stock. In other words, it&amp;rsquo;s a consideration of the potential losses if an investor&amp;rsquo;s thesis is incorrect and/or if the worst case scenario is realized. This can be described with the following probability distribution:</description>
+      <description>Introduction There are two common models of conceptualizing the risk associated with a stock:
+ The Margin of Safety Principal popularized by Benjamin Graham Asset returns volatility  The former can be characterized as a subjective assessment of how much downside risk is associated with a stock. In other words, it&amp;rsquo;s a consideration of the potential losses if an investor&amp;rsquo;s thesis is incorrect and/or if the worst case scenario is realized.</description>
     </item>
     
   </channel>

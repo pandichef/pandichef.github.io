@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Why Skewness and Kurtosis Don&#39;t Matter - Fintech Musings</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="David Rashty" /><meta name="description" content="The Sharpe Ratio is one of the most common performance metrics for both individual stocks and portfolios. However, a more natural choice for a portfolio performance metric is the ratio of the expected return to some Value-at-Risk of the return distribution, which can be characterized as a Generalized Sharpe Ratio i.e., $$ GSR \equiv \lim_{\alpha \to 0} \frac{\mu}{V_\alpha(\mu=0,\sigma,s,k,&amp;hellip;)} $$ where \(V_{\alpha}()\) is the Value-at-Risk, \(\alpha\) is the probability threshold and \(\mu\), \(\sigma\), \(s\), etc." /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.69.2 with theme even" />
+
+
+<link rel="canonical" href="https://pandichef.github.io/post/generalized-sharpe-ratio/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.651e6917abb0239242daa570c2bec9867267bbcd83646da5a850afe573347b44.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Why Skewness and Kurtosis Don&#39;t Matter" />
+<meta property="og:description" content="The Sharpe Ratio is one of the most common performance metrics for both individual stocks and portfolios. However, a more natural choice for a portfolio performance metric is the ratio of the expected return to some Value-at-Risk of the return distribution, which can be characterized as a Generalized Sharpe Ratio i.e., $$ GSR \equiv \lim_{\alpha \to 0} \frac{\mu}{V_\alpha(\mu=0,\sigma,s,k,&hellip;)} $$ where \(V_{\alpha}()\) is the Value-at-Risk, \(\alpha\) is the probability threshold and \(\mu\), \(\sigma\), \(s\), etc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pandichef.github.io/post/generalized-sharpe-ratio/" />
+<meta property="article:published_time" content="2020-09-04T14:23:14-04:00" />
+<meta property="article:modified_time" content="2020-09-04T14:23:14-04:00" />
+<meta itemprop="name" content="Why Skewness and Kurtosis Don&#39;t Matter">
+<meta itemprop="description" content="The Sharpe Ratio is one of the most common performance metrics for both individual stocks and portfolios. However, a more natural choice for a portfolio performance metric is the ratio of the expected return to some Value-at-Risk of the return distribution, which can be characterized as a Generalized Sharpe Ratio i.e., $$ GSR \equiv \lim_{\alpha \to 0} \frac{\mu}{V_\alpha(\mu=0,\sigma,s,k,&hellip;)} $$ where \(V_{\alpha}()\) is the Value-at-Risk, \(\alpha\) is the probability threshold and \(\mu\), \(\sigma\), \(s\), etc.">
+<meta itemprop="datePublished" content="2020-09-04T14:23:14-04:00" />
+<meta itemprop="dateModified" content="2020-09-04T14:23:14-04:00" />
+<meta itemprop="wordCount" content="473">
+
+
+
+<meta itemprop="keywords" content="portfolio-theory," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Why Skewness and Kurtosis Don&#39;t Matter"/>
+<meta name="twitter:description" content="The Sharpe Ratio is one of the most common performance metrics for both individual stocks and portfolios. However, a more natural choice for a portfolio performance metric is the ratio of the expected return to some Value-at-Risk of the return distribution, which can be characterized as a Generalized Sharpe Ratio i.e., $$ GSR \equiv \lim_{\alpha \to 0} \frac{\mu}{V_\alpha(\mu=0,\sigma,s,k,&hellip;)} $$ where \(V_{\alpha}()\) is the Value-at-Risk, \(\alpha\) is the probability threshold and \(\mu\), \(\sigma\), \(s\), etc."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">David Rashty</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">David Rashty</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Why Skewness and Kurtosis Don&#39;t Matter</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-09-04 </span>
+        
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>The Sharpe Ratio is one of the most common performance metrics for both individual stocks
+and portfolios.  However, a more natural choice for a portfolio performance metric is the
+ratio of the expected return to some Value-at-Risk of the return distribution, which can
+be characterized as a <em>Generalized Sharpe Ratio</em> i.e.,
+$$
+GSR \equiv \lim_{\alpha \to 0} \frac{\mu}{V_\alpha(\mu=0,\sigma,s,k,&hellip;)}
+$$
+where \(V_{\alpha}()\) is the Value-at-Risk, \(\alpha\) is the probability threshold
+and \(\mu\), \(\sigma\), \(s\), etc. are the 1<sup>st</sup> (mean),
+2<sup>nd</sup> (standard deviation), 3<sup>rd</sup> (skewness), etc. moments of of the
+return distribution.  \(\mu=0\) indicates that Value-at-Risk calculations assume 0
+expected return.</p>
+<p>For a standard normal distribution
+$$V_{0.1587}(\mu=0,\sigma,s,k,&hellip;) = V_{0.1587}(\mu=0,\sigma) = \sigma$$
+$$V_{0.0250}(\mu=0,\sigma,s,k,&hellip;) = V_{0.0250}(\mu=0,\sigma) = 1.96\sigma$$
+$$V_{0.0100}(\mu=0,\sigma,s,k,&hellip;) = V_{0.0100}(\mu=0,\sigma) = 2.33\sigma$$</p>
+<p><strong>Question</strong>: If the GSR is our <em>portfolio&rsquo;s</em> performance metric, what is the
+decision criteria for including an individual asset in that portfolio?</p>
+<p>Now if the portfolio&rsquo;s performance metric is the <em>standard</em> Sharpe Ratio, then the
+decision criteria (called a <em>Marginal</em> Sharpe Ratio) is i.e.,
+$$MSR_a = SR_a - \rho SR_m$$</p>
+<p>If the MSR is greater than 0, then an asset&rsquo;s portfolio weight is greater than 0.  Is
+it possible to derive a formula that characterizes a <em>Marginal <strong>Generalized</strong> Sharpe Ratio</em>
+(MGSR)?</p>
+<p>This is a complicated question mathematically, but it is possible to show that
+$$GMSR_a = SR_a - (\rho-\gamma) SR_m$$
+where \(\gamma\) is related to the second derivative of the asset&rsquo;s return with respect
+to the portfolio&rsquo;s return i.e.,
+$$
+\gamma \propto \frac{\partial^2 f(r_m)}{\partial r_m^2}
+$$
+where
+$$r_a = f(r_m) + \epsilon$$
+for some non-linear function f() and error term \(\epsilon\).</p>
+<p>(To the best of my knowledge, the proof of this isn&rsquo;t published.  If you&rsquo;d like to see a
+proof of this, send me an email.)</p>
+<p>This is a pretty surprising result for a few reasons:</p>
+<ul>
+<li>The ordinary Sharpe Ratio reappears even though it isn&rsquo;t in our definition of the MGSR</li>
+<li>Higher order moments of the asset&rsquo;s distribution and the portfolio&rsquo;s distribution
+appear nowhere in this equation</li>
+</ul>
+<p>The latter point implies that an individual asset&rsquo;s skewness in itself doesn&rsquo;t impact
+its portfolio weight.  The 2nd order factor that is relevant is \(\gamma\).</p>
+<p>On further consideration, this is actually just a consequence of the  <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Central Limit Theorem</a>.
+Imagine a portfolio with an infinite number of uncorrelated assets with arbitrary return
+distributions.  By the Central Limit Theorem, the portfolio&rsquo;s returns will be normallly
+distributed!</p>
+<p>\(\gamma\) is also related to \(\Gamma\) in traditional optional pricing theory.
+The &ldquo;fair&rdquo; price for an asset corresponds to the discount rate where the MGSR is 0 i.e.,
+$$GMSR_a = SR_a - (\rho-\gamma) SR_m \equiv 0$$
+$$SR_a = (\rho-\gamma) SR_m$$
+$$\mu_a = (\rho-\gamma) SR_m \sigma_a$$
+$$\mu_a = (\rho-\gamma) \mu_m \frac{\sigma_a}{\sigma_m}$$
+$$\mu_a = \left(\beta -\gamma\frac{\sigma_a}{\sigma_m}\right)\mu_m$$
+which is the classical CAPM formula with an addtional &ldquo;convexity&rdquo; term.</p>
+<p>While estimating \(\gamma\) isn&rsquo;t trivial, the qualitative implication is profound:
+when pricing assets, convexity matters, not skewness.</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">David Rashty</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-09-04
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/portfolio-theory/">portfolio-theory</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/naive-portfolio-theory/">
+            <span class="next-text nav-default">A Common Sense Approach to Portfolio Theory</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:david.rashty@pandibay.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://stackoverflow.com/users/10134077/pandichef" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="https://twitter.com/drashty" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/david-rashty-5381b213/" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="https://github.com/pandichef" class="iconfont icon-github" title="github"></a>
+  <a href="https://pandichef.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">David Rashty</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.d7b7ada643c9c1a983026e177f141f7363b4640d619caf01d8831a6718cd44ea.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

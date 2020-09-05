@@ -2,21 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://pandichef.github.io/post/naive-portfolio-theory/</loc>
-    <lastmod>2020-09-03T12:05:12-04:00</lastmod>
+    <loc>https://pandichef.github.io/</loc>
+    <lastmod>2020-09-04T14:23:14-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://pandichef.github.io/</loc>
-    <lastmod>2020-09-03T12:05:12-04:00</lastmod>
+    <loc>https://pandichef.github.io/tags/portfolio-theory/</loc>
+    <lastmod>2020-09-04T14:23:14-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://pandichef.github.io/post/</loc>
+    <lastmod>2020-09-04T14:23:14-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://pandichef.github.io/tags/</loc>
+    <lastmod>2020-09-04T14:23:14-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://pandichef.github.io/post/generalized-sharpe-ratio/</loc>
+    <lastmod>2020-09-04T14:23:14-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://pandichef.github.io/post/naive-portfolio-theory/</loc>
     <lastmod>2020-09-03T12:05:12-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -31,12 +52,6 @@
   
   <url>
     <loc>https://pandichef.github.io/categories/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://pandichef.github.io/tags/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

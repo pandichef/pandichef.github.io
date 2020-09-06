@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>macroeconomics on Fintech Musings</title>
+    <link>https://pandichef.github.io/tags/macroeconomics/</link>
+    <description>Recent content in macroeconomics on Fintech Musings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 06 Sep 2020 11:59:21 -0400</lastBuildDate>
+    
+	<atom:link href="https://pandichef.github.io/tags/macroeconomics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Why do interest rates continue to grind lower?</title>
+      <link>https://pandichef.github.io/post/solow-growth-model/</link>
+      <pubDate>Sun, 06 Sep 2020 11:59:21 -0400</pubDate>
+      
+      <guid>https://pandichef.github.io/post/solow-growth-model/</guid>
+      <description>Many people have asked me recently why interest rates continue to grind lower. As can be seen in Figure 1 below, when viewed over the course of 3 decades, interest rates have declined almost linearly since 1982. In fact, the same trend holds true for many western countries. Why might that be the case?
+Macrotrends Data Download10 Year Treasury Rate - 54 Year Historical ChartDISCLAIMER AND TERMS OF USE: HISTORICAL DATA IS PROVIDED &#34;</description>
+    </item>
+    
+  </channel>
+</rss>

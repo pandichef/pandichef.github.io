@@ -3,27 +3,48 @@
   
   <url>
     <loc>https://pandichef.github.io/</loc>
-    <lastmod>2020-09-04T14:23:14-04:00</lastmod>
+    <lastmod>2020-09-06T11:59:21-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://pandichef.github.io/tags/portfolio-theory/</loc>
-    <lastmod>2020-09-04T14:23:14-04:00</lastmod>
+    <loc>https://pandichef.github.io/tags/interest-rates/</loc>
+    <lastmod>2020-09-06T11:59:21-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://pandichef.github.io/tags/macroeconomics/</loc>
+    <lastmod>2020-09-06T11:59:21-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://pandichef.github.io/post/</loc>
-    <lastmod>2020-09-04T14:23:14-04:00</lastmod>
+    <lastmod>2020-09-06T11:59:21-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://pandichef.github.io/tags/</loc>
+    <lastmod>2020-09-06T11:59:21-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://pandichef.github.io/post/solow-growth-model/</loc>
+    <lastmod>2020-09-06T11:59:21-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://pandichef.github.io/tags/portfolio-theory/</loc>
     <lastmod>2020-09-04T14:23:14-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

@@ -2,8 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://pandichef.github.io/note/cryptocurrency-cheat-sheet/</loc>
+    <lastmod>2020-09-10T14:06:21-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://pandichef.github.io/</loc>
-    <lastmod>2020-09-06T11:59:21-04:00</lastmod>
+    <lastmod>2020-09-10T14:06:21-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://pandichef.github.io/note/</loc>
+    <lastmod>2020-09-10T14:06:21-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://pandichef.github.io/tags/angel-investing/</loc>
+    <lastmod>2020-09-08T14:32:06-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://pandichef.github.io/tags/regulations/</loc>
+    <lastmod>2020-09-08T14:32:06-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://pandichef.github.io/tags/</loc>
+    <lastmod>2020-09-08T14:32:06-04:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://pandichef.github.io/note/what-is-crowdfunding/</loc>
+    <lastmod>2020-09-08T14:32:06-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -24,13 +66,6 @@
   
   <url>
     <loc>https://pandichef.github.io/post/</loc>
-    <lastmod>2020-09-06T11:59:21-04:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://pandichef.github.io/tags/</loc>
     <lastmod>2020-09-06T11:59:21-04:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

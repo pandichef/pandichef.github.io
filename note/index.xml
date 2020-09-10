@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on Fintech Musings</title>
+    <link>https://pandichef.github.io/note/</link>
+    <description>Recent content in Notes on Fintech Musings</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 10 Sep 2020 14:06:21 -0400</lastBuildDate>
+    
+	<atom:link href="https://pandichef.github.io/note/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cryptocurrency Cheat Sheet</title>
+      <link>https://pandichef.github.io/note/cryptocurrency-cheat-sheet/</link>
+      <pubDate>Thu, 10 Sep 2020 14:06:21 -0400</pubDate>
+      
+      <guid>https://pandichef.github.io/note/cryptocurrency-cheat-sheet/</guid>
+      <description>Statistics Stats as of 9/10/20
+   Currency Ticker Market Cap Volume (24hrs) Coinbase Popularity Avg Hold Time (days) Short Description     USD Coin USDC $1.8bn $462.5mm 18 15 Coinbase&amp;rsquo;s stablecoin   0x ZRX $340.6mm $46.7mm 10 102 -   Bitcoin BTC $191.4bn $33.5bn 1 92 -   Algorand ALGO $440.4mm $264.5mm 21 13 Proof-of-Stake   Augur REP $187.4mm $11.mm 23 17 Prediction Markets   Band Protocol BAND $184.</description>
+    </item>
+    
+    <item>
+      <title>What Is Crowdfunding?</title>
+      <link>https://pandichef.github.io/note/what-is-crowdfunding/</link>
+      <pubDate>Tue, 08 Sep 2020 14:32:06 -0400</pubDate>
+      
+      <guid>https://pandichef.github.io/note/what-is-crowdfunding/</guid>
+      <description>Traditional Offerings Reg D Federal law only allows Accredited Investors to legally invest in startups using Regulation D 506. Accredited Investors have no limits.
+Accredited investors:
+ earn more than $200,000 per year, or a joint income of $300,000, in the last two years and expect the same this year. or, have a net worth exceeding $1 million not including their home  Reg A+ Non-accredited investors may legally invest no more than 10% of their income or net worth - whichever is greater.</description>
+    </item>
+    
+  </channel>
+</rss>

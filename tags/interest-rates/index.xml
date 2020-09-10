@@ -18,7 +18,7 @@
       
       <guid>https://pandichef.github.io/post/solow-growth-model/</guid>
       <description>Many people have asked me recently why interest rates continue to grind lower. As can be seen in Figure 1 below, when viewed over the course of 3 decades, interest rates have declined almost linearly since 1982. In fact, the same trend holds true for many western countries. Why might that be the case?
-# Run this as a script, not in Scientific View # Data source: https://www.macrotrends.net/2016/10-year-treasury-bond-rate-yield-chart import os import pandas as pd import altair as alt basename = os.</description>
+Macrotrends Data Download10 Year Treasury Rate - 54 Year Historical ChartDISCLAIMER AND TERMS OF USE: HISTORICAL DATA IS PROVIDED &#34;</description>
     </item>
     
   </channel>
